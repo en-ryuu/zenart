@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generative Art using p5.js</title>
+
+  <link rel="stylesheet" type="text/css" href="./.css/learn_styles.css">
+  <script src="./.js/jquery/jquery-3.5.1.min.js"></script>
+
+
+  <!-- <link rel="stylesheet" type="text/css" href="./.css/indexStyles.css"> -->
+</head>
+
+<body>
+  <div class="starfield">
+  </div>
+  <section class="et-hero-tabs">
+    <div class="et-hero-tabs-container">
+      <a class="et-hero-tab" href="#gen-tab">Generative Art.js</a>
+      <a class="et-hero-tab" href="#weave-tab">Weave.js</a>
+      <a class="et-hero-tab" href="#p5-tab">P5.js</a>
+      <a class="et-hero-tab" href="#random-tab">Randomness</a>
+      <a class="et-hero-tab" href="#noise-tab">Noise</a>
+      <a class="et-hero-tab" href="#pnoise-tab">Perlin Noise</a>
+      <span class="et-hero-tab-slider"></span>
+    </div>
+  </section>
+  <section class="inf-section" id="gen-tab">
+    <div id="container">
+      <div class="product-details">
+        <h1>What is Generative Art?</h1>
+        <p class="information"><strong style="color: #ddd;">Generative Art</strong> is basically programming a computer
+          to create a piece of art using rules and
+          formulas with a pinch of randomness to make it unique.<br> In this project we use <a href="p5-tab">p5.js</a>
+          as a platform to create art. Feel free to explore the
+          different aspects this project revolves around.
+          <br><br><a href="./weave.html">Try Weave.js Here</a></p>
+      </div>
+      <div class="product-image">
+        <img src="./.resources/.images/genart.jpg">
+        <!-- <div class="info">
+          <h2>The Description</h2>
+          <ul>
+            <li><strong>Sun Needs: </strong>Full Sun</li>
+            <li><strong>Soil Needs: </strong>Damp</li>
+            <li><strong>Zones: </strong>9 - 11</li>
+            <li><strong>Height: </strong>2 - 3 feet</li>
+            <li><strong>Blooms in: </strong>Mid‑Summer - Mid‑Fall</li>
+            <li><strong>Features: </strong>Tolerates heat</li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="inf-section" id="weave-tab">
+    <div id="container">
+      <div class="product-details">
+        <h1>Weave.js</h1>
+        <p><strong style="color: #ddd;">Weave.js</strong> is a sketch from scratch using p5.js heavily inspired by <a
+            href="www.weavesilk.com">WeaveSilk</a>. This sketch is the main feature of this project as it uses and
+          utilizes almost all of the subtopics that are discussed below.
+          <br>This sketch is a <a href="#kscope-tab">kaleidoscope</a> that uses <a href="#bezier-tab">bezier curves</a>
+          as the brush and are generated using <a href="noise-tab">noise</a> for smooth transitions in-between frames
+          which as a result creates unique and beautiful patterns.</p>
+      </div>
+      <div class="product-image">
+        <img src="./.resources/.images/weaveGif.gif">
+        <!-- <div class="info">
+          <h2>The Description</h2>
+          <ul>
+            <li><strong>Sun Needs: </strong>Full Sun</li>
+            <li><strong>Soil Needs: </strong>Damp</li>
+            <li><strong>Zones: </strong>9 - 11</li>
+            <li><strong>Height: </strong>2 - 3 feet</li>
+            <li><strong>Blooms in: </strong>Mid‑Summer - Mid‑Fall</li>
+            <li><strong>Features: </strong>Tolerates heat</li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="inf-section" id="p5-tab">
+    <div id="container">
+      <div class="product-details">
+        <h1>What is p5.js</h1>
+        <p>p5.js is a JavaScript library for creative coding, with a focus on making coding accessible and inclusive
+          for artists, designers, educators, beginners, and anyone else!. We can create all type of generative art
+          design using p5.js.
+          <br><br><a href="https://p5js.org/download/">Download p5.js</a></p>
+      </div>
+      <div class="product-image">
+        <img src="./.resources/.images/pFive.jpg">
+      </div>
+    </div>
+  </section>
+
+  <section class="inf-section" id="random-tab">
+    <div id="container">
+      <div class="product-details">
+        <h1>Randomness</h1>
+        <p>"Controlled" randomness eh? It may sound contradictory, but if you are an artist or an art historian,
+          you know that artists have always sought ways to introduce randomness into their work to stimulate their
+          creativity. But we don't use random() function for controlled randomness. <br>
+          That's where Noise comes in the play. More about noise below.</p>
+      </div>
+      <div class="product-image">
+        <img src="./.resources/.images/genart.jpg">
+        <!-- <div class="info">
+          <h2>The Description</h2>
+          <ul>
+            <li><strong>Sun Needs: </strong>Full Sun</li>
+            <li><strong>Soil Needs: </strong>Damp</li>
+            <li><strong>Zones: </strong>9 - 11</li>
+            <li><strong>Height: </strong>2 - 3 feet</li>
+            <li><strong>Blooms in: </strong>Mid‑Summer - Mid‑Fall</li>
+            <li><strong>Features: </strong>Tolerates heat</li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="inf-section" id="noise-tab">
+    <div id="container">
+      <div class="product-details">
+        <h1>Noise</h1>
+        <p>If you have used random() function, you must be familiar to how random it can get. Noise is also a random
+          function but it remains smooth and organic.
+          <br> The noise() function in p5.js utilizes perlin noise. More about perlin noise below.
+        </p>
+      </div>
+      <div class="product-image">
+        <img src="./.resources/.images/genart.jpg">
+        <!-- <div class="info">
+          <h2>The Description</h2>
+          <ul>
+            <li><strong>Sun Needs: </strong>Full Sun</li>
+            <li><strong>Soil Needs: </strong>Damp</li>
+            <li><strong>Zones: </strong>9 - 11</li>
+            <li><strong>Height: </strong>2 - 3 feet</li>
+            <li><strong>Blooms in: </strong>Mid‑Summer - Mid‑Fall</li>
+            <li><strong>Features: </strong>Tolerates heat</li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="inf-section" id="pnoise-tab">
+    <div id="container">
+      <div class="product-details">
+        <h1>What is perlin noise?</h1>
+        <p>Created by <a href="https://en.wikipedia.org/wiki/Ken_Perlin">Ken Perlin</a>, Perlin noise was invented for
+          applications which required semi-random variations with continuous and smooth trajectories. It's used in all
+          sorts of applications, such as creating terrains and realistic looking textures for video games.
+          <br><br><a href="https://genekogan.com/code/p5js-perlin-noise/">See how perlin noise works</a></p>
+      </div>
+      <div class="product-image">
+        <img src="./.resources/.images/genart.jpg">
+        <!-- <div class="info">
+          <h2>The Description</h2>
+          <ul>
+            <li><strong>Sun Needs: </strong>Full Sun</li>
+            <li><strong>Soil Needs: </strong>Damp</li>
+            <li><strong>Zones: </strong>9 - 11</li>
+            <li><strong>Height: </strong>2 - 3 feet</li>
+            <li><strong>Blooms in: </strong>Mid‑Summer - Mid‑Fall</li>
+            <li><strong>Features: </strong>Tolerates heat</li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function drawStars() {
+      var boxShadow = '';
+      var windowWidth = window.innerWidth;
+      var windowHeight = window.innerHeight * 8;
+      console.log(windowWidth + ', ' + windowHeight);
+
+      for (var x = 0; x < 800; x++) {
+        let rW = Math.random();
+        let rH = Math.random();
+        let w = windowWidth * rW;
+        let h = windowHeight * rH;
+        boxShadow += w + 'px ' + h + 'px 0 0 #fff, ';
+      }
+
+      boxShadow = boxShadow.slice(0, -2);
+
+      $('.starfield').css('box-shadow', boxShadow);
+    })();
+  </script>
+
+  <script src="./.js/nav-bar.js"></script>
+</body>
+
+</html>
