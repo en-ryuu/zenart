@@ -1,0 +1,89 @@
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+	.Home {
+		display: block;
+	}
+
+		.Home-wrapper {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+			.Side-left {
+                /* background-color: #00a8a4; */
+                background-color: #10da82;
+				height: 100%;
+				left: -100%;
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				transform: skew(-45deg);
+				width: 150%;
+				z-index: 5;
+			}
+				.Side-left-wrapper {
+					width: 100%;
+					height: 100%;
+				}
+					.Side-left-image {
+                        background: url(../.resources/.images/1.jpg) center no-repeat transparent;
+						height: 100%;
+						left: 50%;
+						position: absolute;
+						top: 0;
+						transform: skew(45deg);
+						width: 100%;
+					}
+
+				.Side-right {
+					width: 100%;
+          height: 100%;
+          position: absolute;
+          background-color: #0b0918;
+				}
+					.Side-right-image {
+						position: absolute;
+						top: 0;
+						right: 0;
+						width: 100%;
+                        height: 100%;
+                        background:url(../.resources/.images/8.jpg) center no-repeat transparent;
+					}
+
+.Signature {
+  position: absolute;
+  z-index: 100;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  line-height: .2;
+  font-size: .7em;
+  font-family: Open Sans, sans-serif;
+}
+
+
+@media screen and (max-width: 768px) {
+
+	.Side-left {
+		top: -65%;
+		left: 0;
+		transform: skewY(-35deg);
+		width: 100%;
+	}
+		.Side-left-image {
+			background-size: 65%;
+			left: 0;
+			top: 50%;
+			transform: skewY(35deg);
+		}
+
+	.Side-right-image {
+		top: -15%;
+		background-size: 65%;
+	}
+
+}
