@@ -12,7 +12,8 @@
 </head>
 
 <body>
-
+    <div class="starfield">
+    </div>
     <section class="et-hero-tabs" id="tab-home">
         <h1>Generative Art using P5.js</h1>
         <h3 style="font-size: larger;">Explore the different Sketches made using p5.js</h3>
@@ -84,7 +85,26 @@
         </section>
         </div>
     </div>
-
+    <script>
+        (function drawStars() {
+          var boxShadow = '';
+          var windowWidth = window.innerWidth;
+          var windowHeight = window.innerHeight * 8;
+          console.log(windowWidth + ', ' + windowHeight);
+    
+          for (var x = 0; x < 800; x++) {
+            let rW = Math.random();
+            let rH = Math.random();
+            let w = windowWidth * rW;
+            let h = windowHeight * rH;
+            boxShadow += w + 'px ' + h + 'px 0 0 #fff, ';
+          }
+    
+          boxShadow = boxShadow.slice(0, -2);
+    
+          $('.starfield').css('box-shadow', boxShadow);
+        })();
+      </script>
         <script src="./.js/nav-bar.js"></script>
 </body>
 
