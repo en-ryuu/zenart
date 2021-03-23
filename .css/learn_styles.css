@@ -229,6 +229,7 @@ body::-webkit-scrollbar-thumb {
   letter-spacing: 0.1rem;
   transition: all 0.5s ease;
   font-size: 0.8rem;
+  
 }
 
 .et-hero-tab:hover,
@@ -237,6 +238,7 @@ body::-webkit-scrollbar-thumb {
   background: #0b0918;
   box-shadow: 1px 0 50px #2b1c3b;
   transition: all 0.5s ease;
+  border-bottom-right-radius:10%;
 }
 
 .et-hero-tab-slider {
@@ -266,4 +268,4 @@ body::-webkit-scrollbar-thumb {
   .et-hero-tab-link {
     font-size: 1rem;
   }
-}
+  }

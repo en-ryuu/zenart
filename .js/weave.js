@@ -12,12 +12,14 @@ var settings = {
   sym: 6,
   brushStroke: 2,
   dual: false,
-  n: 75,
+  n: 75, 
   stx: 2,
-  auto: false,
+  auto: true,
   nFrame: 90,
   frames: 60,
-  t: 12,
+  t: 9,
+  spi: false,
+  fillO: true
 };
 
 // Color Picker Object
@@ -70,13 +72,18 @@ function setup() {
 
   t = 0; // Increase the t value for noise
 
-  canvas = createCanvas(window.innerWidth, window.innerHeight);
+  // canvas = createCanvas(5980, 2892);
+  // canvas = createCanvas(window.innerWidth*4, window.innerHeight*4);
+  canvas = createCanvas(window.innerWidth,window.innerHeight);
   canvas.style("display", "block");
   canvas.parent("sketch-holder");
 
   // background('#0f0c24'); // The sweet easy on eye color
   // background(colorObject.bgColor);
   setBackground();
+    // Noise Settings
+    noiseDetail(2, 0.001); // no of octaves, falloff factor .. Learn more : https://p5js.org/reference/#/p5/noiseDetail
+    noiseSeed(settings.n*random(0,1000)); // Define a specific noise seed
 }
 
 // Clear the screen
@@ -99,6 +106,7 @@ function screenFull() {
 
 // Main function for drawing. Loops infinitely until stopped.
 function draw() {
+  // background(0,14);
   // Reset settings if changed
   if (resetV == true) {
     frameRate(settings.frames);
@@ -108,10 +116,6 @@ function draw() {
   }
 
   translate(width / 2, height / 2); // Define the center of symmetry
-
-  // Noise Settings
-  noiseDetail(2, 0.001); // no of octaves, falloff factor .. Learn more : https://p5js.org/reference/#/p5/noiseDetail
-  noiseSeed(settings.n); // Define a specific noise seed
 
   // If mouse is inside the canvas
   if (
@@ -149,9 +153,8 @@ function drawFunc() {
   for (let i = 0; i < symmetry; i++) {
     // Color Definitions
     // let random_index = Math.floor(Math.random() * TONES_2.length); // For gradient effect
-    const [r, g, b] = colorObject.color; // Define primary color
-    const a = colorObject.a;
-
+    var [r, g, b] = colorObject.color; // Define primary color
+    var a = colorObject.a;
     rotate(angle); // Rotating the image
 
     strokeWeight(Math.random() * 6); // Thickness of stroke from 1 to 6
@@ -161,29 +164,17 @@ function drawFunc() {
     assignPoints(); // Define the Start, End and anchor points for the bezier curve
 
     drawBezier(sx, sy, ax1, ay1, ax2, ay2, ex, ey, a); // Function to draw the Bezier curves
-    drawBezier(
-      sx / 2,
-      sy / 2,
-      ax1 / 2,
-      ay1 / 2,
-      ax2 / 2,
-      ay2 / 2,
-      ex / 2,
-      ey / 2,
-      a
-    );
-    drawBezier(
-      sx / 4,
-      sy / 4,
-      ax1 / 4,
-      ay1 / 4,
-      ax2 / 4,
-      ay2 / 4,
-      ex / 4,
-      ey / 4,
-      a
-    );
-    //clearFrame(); // For auto clearing canvas after x frames
+    drawBezier(sx / 2, sy / 2, ax1 / 2, ay1 / 2, ax2 / 2, ay2 / 2, ex / 2, ey / 2, a);
+    drawBezier(sx / 4, sy / 4, ax1 / 4, ay1 / 4, ax2 / 4, ay2 / 4, ex / 4, ey / 4, a);
+    
+    if(settings.fillO == true){
+      drawBezier(0, 0, ax1 / 4, ay1 / 4, ax2 / 4, ay2 / 4, ex / 4, ey / 4, a/5);
+    }
+    
+    if(settings.spi == true){
+      drawBezier(width/2, height/2 / 8, ax1 / 8, ay1 / 8, ax2 / 8, ay2 / 8, ex / 8, ey / 8, a);
+    }
+    // drawBezier(width/2, height/2, ax1 / 8, ay1 / 8, ax2 / 8, ay2 / 8, ex / 8, ey / 8, a);
   }
 }
 
@@ -245,7 +236,7 @@ function createGUI() {
     .step(1)
     .max(20)
     .onChange(settings.resetVar);
-
+  gui.add(settings, "fillO").name("Fill Center");
   var guiColor = gui.addFolder("Color Options");
   guiColor.open();
   guiColor.addColor(colorObject, "color").name("Primary Color");
@@ -259,7 +250,6 @@ function createGUI() {
     Light: 4,
     Picker: 5,
   }).name("Background").onChange(clearScreen);
-
   gui
     .add(settings, "stx", {
       Weave: 1,
@@ -271,8 +261,9 @@ function createGUI() {
       UseAuto: 7,
     })
     .name("Presets");
-
+    guiColor.add(settings, "spi").name("Spice it up");
   var guiAutomation = gui.addFolder("Automation");
+  guiAutomation.open();
   guiAutomation.add(settings, "auto").name("AutoDraw");
   guiAutomation.add(settings, "nFrame").name("Clear After n frame");
 

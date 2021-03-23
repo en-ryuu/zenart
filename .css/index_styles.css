@@ -68,7 +68,7 @@ canvas {
 /*Main container css----------------------------------*/
 .infobox {
   cursor: default;
-  left: 7vw;
+  left: 5vw;
   line-height: 1;
   /* position: absolute; */
   text-align: center;
@@ -90,7 +90,7 @@ canvas {
   background-size: cover !important;
   background-position: center !important;
   height: 100%;
-  padding: 1em 2em;
+  padding: 1em 4.5em;
   background: rgba(7, 9, 15,0.3);
   border-radius: 10px;
 }
@@ -293,6 +293,7 @@ a {
   background: #0b0918;
   box-shadow: 1px 0 50px #2b1c3b;
   transition: all 0.5s ease;
+  border-bottom-right-radius:10% ;
 }
 
 .et-hero-tab-slider {
@@ -305,6 +306,7 @@ a {
   box-shadow: 1px 0 10px #2b1c3b;
   transition: left 0.3s ease;
 }
+
 
 @media (min-width: 800px) {
 
